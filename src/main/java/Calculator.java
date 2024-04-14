@@ -2,18 +2,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Calculator {
-        ArrayList<Main.Good> goodList = new ArrayList<>();
+        ArrayList<Good> goodList = new ArrayList<>();
 
         float sum = 0;
         int quantityPersons;
 
-        float getSum(ArrayList<Main.Good> goodList) {
+        float getSum(ArrayList<Good> goodList) {
 
             this.goodList = goodList;
             Iterator iterator = goodList.iterator();
 
             while(iterator.hasNext()){
-                Main.Good good = (Main.Good) iterator.next();
+                Good good = (Good) iterator.next();
                 sum = sum + good.price;
             }
             return sum;

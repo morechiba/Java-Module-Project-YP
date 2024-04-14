@@ -105,21 +105,5 @@ public class Main {
         goodListString = "Добавленные товары:" + goodListString;
         return goodListString;
     }
-
-
-    public static class Good {
-        String name;
-        float price;
-        Good(String name, float price){
-            this.name = name;
-            this.price = price;
-        }
-    }
-
-    public static class Formater {
-
-    }
-
-
 }
 
