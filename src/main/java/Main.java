@@ -102,7 +102,6 @@ public class Main {
     }
 
     public static class Calculator {
-        Scanner scanner = new Scanner(System.in);
         ArrayList<Good> goodList = new ArrayList<>();
 
         float sum = 0;
@@ -144,7 +143,7 @@ public class Main {
         }
     }
 
-    public class Formater {
+    public static class Formater {
 
     }
 
