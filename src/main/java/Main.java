@@ -14,10 +14,11 @@ public class Main {
         float sumForPerson = calculator.getSumForPerson(quantityPersons, sum);
         String goodListString = getGoodListString(goodList);
 
+        System.out.println(goodListString);
         System.out.println("Количество человек: " + quantityPersons);
         System.out.println("Cумма: " + sum + " руб.");
         System.out.println("Сумма на человека: " + sumForPerson + " руб.");
-        System.out.println(goodListString);
+
 
     }
 
@@ -64,11 +65,15 @@ public class Main {
                 while(scanner.hasNext()){
                     if(scanner.hasNextFloat()){
                         float goodPrice = scanner.nextFloat();
-                        Good good = new Good(goodName, goodPrice);
-                        goodList.add(good);
-                        System.out.println("Товар " + goodName + " успешно добавлен.");
-                        position++;
-                        break;
+                        if(goodPrice <= 0){
+                            System.out.println("Стоимость товара не может быть отрицательной или равна нулю.");
+                        } else {
+                            Good good = new Good(goodName, goodPrice);
+                            goodList.add(good);
+                            System.out.println("Товар " + goodName + " успешно добавлен.");
+                            position++;
+                            break;
+                        }
                     } else {
                         System.out.println("Стоимость - целое число или число с запятой.");
                         scanner.next();
@@ -94,10 +99,10 @@ public class Main {
 
         while(iterator.hasNext()){
             Good good = (Good) iterator.next();
-            goodListString = goodListString + good.name + "\n";
+            goodListString = goodListString + "\n" +good.name;
         }
 
-        goodListString = "Добавленные товары:\n" + goodListString;
+        goodListString = "Добавленные товары:" + goodListString;
         return goodListString;
     }
 
