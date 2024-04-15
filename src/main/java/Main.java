@@ -10,15 +10,14 @@ public class Main {
         ArrayList<Good> goodList = getGoodList();
 
         Calculator calculator = new Calculator();
+        Formater formater = new Formater();
         float sum = calculator.getSum(goodList);
         float sumForPerson = calculator.getSumForPerson(quantityPersons, sum);
         String goodListString = getGoodListString(goodList);
+        String formatString = formater.formatItog(sumForPerson);
 
         System.out.println(goodListString);
-        System.out.println("Количество человек: " + quantityPersons);
-        System.out.println("Cумма: " + sum + " руб.");
-        System.out.println("Сумма на человека: " + sumForPerson + " руб.");
-
+        System.out.println("Сумма на человека: " + formatString + ".");
 
     }
 
