@@ -4,6 +4,10 @@ public class Formater {
         this.sumForPerson = sumForPerson;
         int formaterBase = (int)sumForPerson;
         String rubl = "";
+
+        if(formaterBase >= 100) {
+            formaterBase = formaterBase % 100;
+        }
         if(formaterBase > 20){
             formaterBase = formaterBase % 10;
         }
